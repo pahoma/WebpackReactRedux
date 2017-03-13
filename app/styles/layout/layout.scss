@@ -1,0 +1,72 @@
+@import 'common/paths';
+@import 'common/sizes';
+@import 'common/colors';
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.root {
+    height: 100%;
+    min-height: 100%;
+}
+
+.layout {
+    height: 100%;
+    min-height: 100%;
+        .content {
+            min-height: 100%;
+            margin: 0 auto -#{$footerHeight};
+        }
+}
+
+.header {
+    height: #{$headerHeight};
+    text-align: center;
+    text-transform: uppercase;
+    line-height: #{$headerHeight};
+    background-color: #{$mainbg};
+    color: #fff;
+}
+
+.footer{
+    height: #{$footerHeight};
+    background-color: #{$mainbg};
+}
+
+.dashboard {
+    background-color: red;
+}
+
+
+/* Common for desktop and tablets */
+@media all and (min-width: 768px) and (min-height: 433px) {
+
+}
+
+/* desktop */
+@media all and (min-width: 1025px) {
+
+}
+
+/* tablet and landscape phones */
+@media all and (min-width: 481px) and (max-width: 1024px),
+    all and (max-height: 432px) and (orientation: landscape) {
+
+}
+/* common for phones portrait, landscape and slim tablets */
+@media all and (max-width: 480px) and (orientation: portrait),
+        all and (min-width: 481px) and (max-width: 767px),
+        all and (max-height: 432px) and (orientation: landscape) {
+
+}
+/* phones portrait */
+/* added min height to disallow landscape phones to use this block */
+@media all and (max-width: 480px) and (orientation: portrait) {
+
+}
+/* phones landscape and slim tablets */
+@media all and (max-height: 432px) and (orientation: landscape),
+        all and (min-width: 481px) and (max-width: 767px) {
+
+}

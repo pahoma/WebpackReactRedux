@@ -2,10 +2,12 @@
 
 import React, { Component } from 'react';
 
-const Header = React.createClass({
+export default class Header extends React.Component {
     render() {
-        return <div className="header"><h1>Here should be a header</h1></div>
+        return (
+            <div className="header" ><h1>Movies cafe</h1></div>
+        )
     }
-})
+}
 
-export default Header
+
