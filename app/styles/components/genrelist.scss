@@ -1,0 +1,21 @@
+.genrelist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #{$content};
+    border-bottom: 1px solid #{$mainbg};
+
+    li {
+        padding: 4px 15px;
+        a {
+            text-decoration: none;
+            color: #{$mainbg};
+            &:hover {
+                background-color: yellow;
+            }
+        }
+
+
+    }
+}

@@ -5,3 +5,4 @@ public/
 *.sublime-*
 *.orig
 *.pyc
+/app/config/private.js

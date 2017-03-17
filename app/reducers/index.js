@@ -1,9 +1,10 @@
 'use strict';
 
 import { combineReducers } from 'redux';
+import GenresReducer from './reducer_genres';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+    genres: GenresReducer
 });
 
 export default rootReducer;

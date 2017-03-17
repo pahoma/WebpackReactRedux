@@ -13,6 +13,7 @@ html, body {
         .content {
             min-height: 100%;
             margin: 0 auto -#{$footerHeight};
+            background: #{$content};
         }
 }
 
@@ -31,7 +32,7 @@ html, body {
 }
 
 .dashboard {
-    background-color: red;
+
 }
 
 
