@@ -2,9 +2,15 @@
 
 import { combineReducers } from 'redux';
 import GenresReducer from './reducer_genres';
+import CategoryReducer from './reducer_categories';
+import { FETCH_BY_CATEGORY } from '../actions/types';
+import _ from 'lodash';
 
-const rootReducer = combineReducers({
+let reducers = {};
+Object.keys(FETCH_BY_CATEGORY).forEach((v)=>(reducers[v] = CategoryReducer(v)));
+
+const rootReducer = combineReducers(_.merge({
     genres: GenresReducer
-});
+}, reducers ));
 
 export default rootReducer;
