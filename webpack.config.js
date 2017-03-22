@@ -28,10 +28,11 @@ module.exports = {
         noParse: /jquery/,
         rules: [
             {
+                loader: 'babel-loader',
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
                 options: {
+                    plugins: ['lodash'],
                     presets: ['react', 'es2015', 'stage-1']
                 }
             },

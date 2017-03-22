@@ -14,9 +14,11 @@ export default class Dashboard extends Component {
         return <div className="dashboard">
             <GenresList />
             <TopRated title="Top rated" />
+            {/*
             <Popular title="Popular" />
             <Upcoming title="Upcoming" />
             <NowPlaying title="Now Playing" />
+            */}
         </div>
     }
 }

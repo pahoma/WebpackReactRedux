@@ -18,7 +18,7 @@ export class GenresList extends Component {
                 {
                     this.props.genres.map(
                         (genre) => (
-                            <li>
+                            <li key={genre.id} >
                                 <Link to={"/genres/"+genre.id } >
                                     { genre.name }
                                 </Link>
