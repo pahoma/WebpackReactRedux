@@ -1,18 +1,52 @@
 'use strict';
 
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
-import Dashboard from '../containers/dashboard';
-import GenrePage from '../containers/genrePage';
-import MoviePage from '../containers/moviePage';
-
 import App from './../components/app';
 
-export default (
-    <Route path="/" component={App}>
-        <IndexRoute component={Dashboard} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/genres/:genreId" component={GenrePage}/>
-        <Route path="/movies/:movieId" component={MoviePage}/>
-    </Route>
-);
+function errorLoading(err) {
+    console.error('Dynamic page loading failed', err);
+}
+
+function loadRoute(cb) {
+    return (module) => cb(null, module.default);
+}
+
+const routes = {
+  component: App,
+  childRoutes: [
+    {
+        path: '/',
+        getComponent(location, cb) {
+        System.import('../pages/dashboard')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
+        }
+    },
+    {
+      path: '/dashboard',
+      getComponent(location, cb) {
+        System.import('../pages/dashboard')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
+      }
+    },
+    {
+      path: '/genres/:genreId',
+      getComponent(location, cb) {
+        System.import('../pages/genre')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
+      }
+    },
+    {
+      path: '/movies/:movieId',
+      getComponent(location, cb) {
+        System.import('../pages/movie')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
+      }
+    }
+  ]
+};
+
+export default routes;

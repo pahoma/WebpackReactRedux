@@ -3,7 +3,7 @@
 import { FETCH_GENRES } from '../actions/types';
 
 export default ( state = [], action ) => {
-    console.log('Action recieved', action);
+    //console.log('Action recieved', action);
     switch (action.type) {
         case FETCH_GENRES: {
             let genres = action.payload.data.genres;

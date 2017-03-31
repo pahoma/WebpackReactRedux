@@ -26,8 +26,8 @@ export default (categoryName) => {
                 <div className="category">
                     <h2>{this.props.title}</h2>
                     <div className="carousel">
-                        <a href="" class="navigation previous">&laquo;</a>
-                        <a href="" class="navigation next">&raquo;</a>
+                        <a href="" className="navigation previous">&laquo;</a>
+                        <a href="" className="navigation next">&raquo;</a>
                         <ul>
                             { this.props[categoryName].map(this.renderTiles) }
                         </ul>
