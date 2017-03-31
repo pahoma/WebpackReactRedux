@@ -7,7 +7,7 @@ import { FETCH_GENRES, ERROR, FETCH_BY_CATEGORY } from './types';
 export function fetchGenres() {
     const url = `${config.root_url}genre/movie/list?api_key=${config.api_key}&language=${config.language}`;
     const request = axios.get(url);
-    console.log('Request:', request);
+    //console.log('Request:', request);
 
     return function (dispatch) {
         return request
@@ -21,7 +21,7 @@ export function fetchMoviesByCategory(category) {
     const request = axios.get(url);
     const FETCH_CATEGORY = FETCH_BY_CATEGORY[category];
 
-    console.log('Request:', request);
+    //console.log('Request:', request);
 
     return function (dispatch) {
         return request
