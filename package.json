@@ -9,18 +9,34 @@
     "build": "NODE_ENV=production webpack --progress  --display-modules",
     "lint": "NODE_ENV='development' ./node_modules/.bin/eslint src",
     "lint:fix": "NODE_ENV='development' ./node_modules/.bin/eslint src --fix",
+    "test": "jest",
     "server": "NODE_ENV='development' ./node_modules/nodemon/bin/nodemon.js ./backend/app.js --config local"
+  },
+  "jest": {
+      "transform": {".*": "./node_modules/babel-jest"},
+      "moduleFileExtensions": ["js", "json","jsx" ],
+      "moduleNameMapper": {
+        "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "EmptyModule"
+      },
+      "transformIgnorePatterns": [ "/node_modules/" ],
+      "unmockedModulePathPatterns": [
+        "./node_modules/react",
+        "./node_modules/react-dom",
+        "./node_modules/react-addons-test-utils",
+        "./EmptyModule.js"
+      ]
   },
   "author": "Sergey Pakhomov",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.2.1",
+    "babel-jest": "^20.0.0",
     "babel-loader": "^6.2.0",
     "babel-plugin-lodash": "^3.2.11",
     "babel-preset-env": "^1.2.2",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.26.2",
     "eslint": "^3.16.1",
     "eslint-plugin-react": "^6.10.0",
@@ -33,6 +49,7 @@
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.5.0",
+    "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.2",
     "style-loader": "^0.13.2",
