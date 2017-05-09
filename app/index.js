@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, hashHistory } from 'react-router/es6';
+import { Router, hashHistory } from 'react-router';
 
 import routes from './routes';
 import store from './store';
