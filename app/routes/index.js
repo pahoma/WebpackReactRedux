@@ -23,28 +23,36 @@ const routes = {
         }
     },
     {
-      path: '/dashboard',
-      getComponent(location, cb) {
+        path: '/dashboard',
+        getComponent(location, cb) {
         System.import('../pages/dashboard')
             .then(loadRoute(cb))
             .catch(errorLoading);
-      }
+        }
     },
     {
-      path: '/genres/:genreId',
-      getComponent(location, cb) {
+        path: '/genres/:genreId',
+        getComponent(location, cb) {
         System.import('../pages/genre')
             .then(loadRoute(cb))
             .catch(errorLoading);
-      }
+        }
     },
     {
-      path: '/movies/:movieId',
-      getComponent(location, cb) {
+        path: '/movies/:movieId',
+        getComponent(location, cb) {
         System.import('../pages/movie')
             .then(loadRoute(cb))
             .catch(errorLoading);
-      }
+        }
+    },
+    {
+       path: '/template',
+        getComponent(location, cb) {
+        System.import('../pages/template')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
+        }
     }
   ]
 };

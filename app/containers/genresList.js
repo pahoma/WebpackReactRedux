@@ -9,6 +9,7 @@ import { Link } from 'react-router';
 export class GenresList extends Component {
 
     componentWillMount(){
+        console.log('componentWillMount GenresList');
         if(!this.props.genres.length) this.props.fetchGenres();
     }
 

@@ -1,14 +1,15 @@
 'use strict';
 
 import { FETCH_GENRES } from '../actions/types';
+import {List} from 'immutable';
 
-export default ( state = [], action ) => {
+export default ( state = List(), action ) => {
     //console.log('Action recieved', action);
     switch (action.type) {
         case FETCH_GENRES: {
-            let genres = action.payload.data.genres;
-            genres.isLoaded = true;
-            return genres
+            state = List(action.payload.data.genres);
+            state.isLoaded = true;
+            return state
         }
         default:
             return state;
