@@ -8,16 +8,17 @@ import { Link } from 'react-router';
 
 export class GenresList extends Component {
 
-    componentWillMount(){
+    componentDidMount(){
         console.log('componentWillMount GenresList');
         if(!this.props.genres.length) this.props.fetchGenres();
     }
 
     render() {
+        const { genres } = this.props;
         return (
             <ul className="genrelist" >
                 {
-                    this.props.genres.map(
+                    genres.map(
                         (genre) => (
                             <li key={genre.id} >
                                 <Link to={"/genres/"+genre.id } >

@@ -17,7 +17,7 @@ const routes = {
     {
         path: '/',
         getComponent(location, cb) {
-        System.import('../pages/dashboard')
+        System.import('../pages/main')
             .then(loadRoute(cb))
             .catch(errorLoading);
         }
@@ -50,6 +50,14 @@ const routes = {
        path: '/template',
         getComponent(location, cb) {
         System.import('../pages/template')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
+        }
+    },
+    {
+       path: '/reduxform',
+        getComponent(location, cb) {
+        System.import('../pages/reduxform')
             .then(loadRoute(cb))
             .catch(errorLoading);
         }

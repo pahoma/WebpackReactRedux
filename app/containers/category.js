@@ -9,7 +9,7 @@ import MovieTile from '../components/movie-tile';
 export default (categoryName) => {
     class Category extends Component {
 
-        componentWillMount(){
+        componentDidMount(){
             this.props.fetchMoviesByCategory(categoryName);
         }
 

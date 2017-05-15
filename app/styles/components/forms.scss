@@ -1,0 +1,14 @@
+
+form {
+    padding: 20px;
+    line-height: 28px;
+
+    input {
+        width: 40%;
+        padding: 0 5px;
+        line-height: 28px;
+    }
+    .fieldError {
+        color: red;
+    }
+}
