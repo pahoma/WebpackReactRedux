@@ -24,6 +24,10 @@ html, body {
     line-height: #{$headerHeight};
     background-color: #{$mainbg};
     color: #fff;
+    a {
+       color: #fff;
+       text-decoration: none;
+    }
 }
 
 .footer{

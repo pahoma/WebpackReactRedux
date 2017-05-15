@@ -1,10 +1,9 @@
 'use strict'
 
-const maxLength = max => value => value && value.length > max ? `Must be ${max} characters or less` : undefined;
-const minLength = min => value => value && value.length < min ? `Must be ${min} characters or more` : undefined;
-const minValue = min => value => value && value < min ? `Must be at least ${min}` : undefined;
-const inRange = (min,max) => value => value && (value.length < min || value.length > max) ?
-    `Must be in range of ${min} to ${max} characters` : undefined;
+const maxLength = max => value => value && value.length > max ? `Must be ${max} characters or less` : undefined,
+      minLength = min => value => value && value.length < min ? `Must be ${min} characters or more` : undefined,
+      minValue = min => value => value && value < min ? `Must be at least ${min}` : undefined,
+      inRange = (min,max) => value => value && (value.length < min || value.length > max) ? `Must be in range of ${min} to ${max} characters` : undefined;
 
 export default {
     maxLength: maxLength,
